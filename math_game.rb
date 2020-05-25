@@ -10,10 +10,21 @@ class MathGame
 
     def play
         while true
+            player = @curr_player
             question = Question.new
-            turn = Turn.new(@curr_player, question)
-            puts "here"
+            turn = Turn.new(player, question)
+
             break
         end
+    end
+
+    private
+    def next_player
+        if @curr_player == @player1
+            @curr_player = @player2
+        else
+            @curr_player = @player1
+        end
+        @curr_player
     end
 end

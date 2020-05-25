@@ -6,4 +6,8 @@ class Player
         @number = plyer_number
         @lives = @@max_lives
     end
+
+    def to_s
+        "Player #{@number}"
+    end
 end
