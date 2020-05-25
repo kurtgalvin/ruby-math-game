@@ -8,7 +8,7 @@ class MathGame
         @curr_player = player1
     end
 
-    def play
+    def start
         while true
             player = @curr_player
             question = Question.new

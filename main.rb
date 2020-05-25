@@ -5,4 +5,4 @@ p1 = Player.new(1)
 p2 = Player.new(2)
 
 game = MathGame.new(p1, p2)
-game.play
+game.start
