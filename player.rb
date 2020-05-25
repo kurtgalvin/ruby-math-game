@@ -7,6 +7,18 @@ class Player
         @lives = @@max_lives
     end
 
+    def wrong_answer
+        @lives = @lives - 1
+    end
+
+    def alive?
+        lives > 0
+    end
+
+    def score
+        "#{@lives}/#{@@max_lives}"
+    end
+
     def to_s
         "Player #{@number}"
     end
