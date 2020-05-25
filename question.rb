@@ -5,14 +5,28 @@ class Question
     end
 
     def correct?(answer)
-        if answer == @a + @b
-            return true
-        else 
-            return false
-        end
+        answer == self.answer
     end
 
     def to_s
-        "What does #{@a} plus #{@b} equal?"
+        "What does #{@a} #{self.class.to_s.downcase} #{@b} equal?"
+    end
+end
+
+class Plus < Question
+    def answer
+        @a + @b
+    end
+end
+
+class Minus < Question
+    def answer
+        @a - @b
+    end
+end
+
+class Multiply < Question
+    def answer
+        @a * @b
     end
 end

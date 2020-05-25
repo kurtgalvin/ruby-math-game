@@ -2,6 +2,12 @@ require "./question.rb"
 require "./turn.rb"
 
 class MathGame
+    @@questions = [
+        Plus, 
+        Minus,
+        Multiply
+    ]
+
     def initialize(player1, player2)
         @player1 = player1
         @player2 = player2
@@ -10,13 +16,13 @@ class MathGame
 
     def start
         while true
-            player = @curr_player
-            question = Question.new
-            turn = Turn.new(player, question)
-            puts "P1: #{@player1.score} vs P2: #{@player2.score}"
+            question_index = Random.rand(@@questions.length)
+            question = @@questions[question_index].new
+            turn = Turn.new(@curr_player, question)
             turn.play
+            puts "P1: #{@player1.score} vs P2: #{@player2.score}"
 
-            unless player.alive?
+            unless @curr_player.alive?
                 game_over
                 break
             else

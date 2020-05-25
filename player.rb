@@ -1,5 +1,4 @@
 class Player
-    attr_reader :lives
     @@max_lives = 3
 
     def initialize(plyer_number)
@@ -12,7 +11,7 @@ class Player
     end
 
     def alive?
-        lives > 0
+        @lives > 0
     end
 
     def score
